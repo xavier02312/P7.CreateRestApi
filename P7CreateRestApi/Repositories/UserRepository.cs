@@ -4,24 +4,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Dot.Net.WebApi.Repositories
 {
-    public class UserRepository
+    /*public class UserRepository
     {
-        public LocalDbContext DbContext { get; }
+        private LocalDbContext _context;
 
-        public UserRepository(LocalDbContext dbContext)
+        public UserRepository(LocalDbContext context)
         {
-            DbContext = dbContext;
+            _context = context;
         }
 
         public User FindByUserName(string userName)
         {
-            return DbContext.Users.Where(user => user.UserName == userName)
+            return _context.Users.Where(user => user.UserName == userName)
                                   .FirstOrDefault();
         }
 
         public async Task<List<User>> FindAll()
         {
-            return await DbContext.Users.ToListAsync();
+            return await _context.Users.ToListAsync();
         }
 
         public void Add(User user)
@@ -32,5 +32,5 @@ namespace Dot.Net.WebApi.Repositories
         {
             return null;
         }
-    }
+    }*/
 }

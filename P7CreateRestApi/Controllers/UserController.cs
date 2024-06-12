@@ -8,7 +8,7 @@ namespace Dot.Net.WebApi.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private UserRepository _userRepository;
+        /*private UserRepository _userRepository;
 
         public UserController(UserRepository userRepository)
         {
@@ -80,6 +80,6 @@ namespace Dot.Net.WebApi.Controllers
         public async Task<ActionResult<List<User>>> GetAllUserArticles()
         {
             return Ok();
-        }
+        }*/
     }
 }
