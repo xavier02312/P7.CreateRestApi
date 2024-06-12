@@ -8,7 +8,7 @@ namespace Dot.Net.WebApi.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        /*private UserRepository _userRepository;
+        private UserRepository _userRepository;
 
         public UserController(UserRepository userRepository)
         {
@@ -24,31 +24,31 @@ namespace Dot.Net.WebApi.Controllers
 
         [HttpGet]
         [Route("add")]
-        public IActionResult AddUser([FromBody]User user)
+        public IActionResult AddUser([FromBody] User user)
         {
             return Ok();
         }
 
         [HttpGet]
         [Route("validate")]
-        public IActionResult Validate([FromBody]User user)
+        public IActionResult Validate([FromBody] User user)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
-           
-           _userRepository.Add(user);
+
+            _userRepository.Add(user);
 
             return Ok();
         }
 
         [HttpGet]
         [Route("update/{id}")]
-        public IActionResult ShowUpdateForm(int id)
+        public async Task <IActionResult> ShowUpdateForm(int id)
         {
-            User user = _userRepository.FindById(id);
-            
+            var user = await _userRepository.FindById(id);
+
             if (user == null)
                 throw new ArgumentException("Invalid user Id:" + id);
 
@@ -65,10 +65,10 @@ namespace Dot.Net.WebApi.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public IActionResult DeleteUser(int id)
+        public async Task <IActionResult> DeleteUser(int id)
         {
-            User user = _userRepository.FindById(id);
-            
+            var user = await _userRepository.FindById(id);
+
             if (user == null)
                 throw new ArgumentException("Invalid user Id:" + id);
 
@@ -80,6 +80,6 @@ namespace Dot.Net.WebApi.Controllers
         public async Task<ActionResult<List<User>>> GetAllUserArticles()
         {
             return Ok();
-        }*/
+        }
     }
 }
