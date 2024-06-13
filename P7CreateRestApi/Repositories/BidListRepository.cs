@@ -6,69 +6,61 @@ namespace P7CreateRestApi.Repositories
 {
     public class BidListRepository : IBidListRepository
     {
-        private LocalDbContext _context;
-        public BidListRepository(LocalDbContext context) 
+        private readonly LocalDbContext _dbContext;
+        public BidListRepository(LocalDbContext dbContext)
         {
-            _context = context;
+            _dbContext = dbContext;
         }
-        public async Task<IEnumerable<BidList>> GetAllBidList()
+
+        public void Create(BidList bidList)
         {
-            var bidLists = await _context.BidLists.ToListAsync();
-
-            if (bidLists == null)
-            {
-                throw new Exception("BidList does not exist.");
-            }
-
-            return bidLists;
+            _dbContext.BidLists.Add(bidList);
+            _dbContext.SaveChanges();
         }
-        public async Task Add(BidList bidList)
+
+        public BidList? Delete(int id)
         {
-            if (BidListExists(bidList.BidListId))
+            var bidList = _dbContext.BidLists.FirstOrDefault(b => b.BidListId == id);
+            if (bidList is not null)
             {
-                throw new Exception("BidList already exists.");
+                _dbContext.BidLists.Remove(bidList);
+                _dbContext.SaveChanges();
             }
-
-            _context.BidLists.Add(bidList);
-
-            await _context.SaveChangesAsync();
-        }
-        public async Task Update(BidList bidList)
-        {
-            if (!BidListExists(bidList.BidListId))
-            {
-                throw new Exception("BidList does not exist.");
-            }
-
-            _context.Update(bidList).State = EntityState.Modified;
-
-            await _context.SaveChangesAsync();
-        }
-        public async Task<BidList> GetBidListById(int id)
-        {
-            var bidList = await _context.BidLists.FindAsync(id);
-
-            if (bidList == null)
-            {
-                throw new Exception("BidList does not exist.");
-            }
-
             return bidList;
         }
-        public async Task Delete(int id)
-        {
-            var bid = await _context.BidLists.FindAsync(id);
 
-            if (bid != null)
+        public BidList? Get(int id) => _dbContext.BidLists.FirstOrDefault(b => b.BidListId == id);
+
+        public List<BidList> List() => _dbContext.BidLists.ToList();
+
+        public BidList? Update(BidList bidList)
+        {
+            var bidListAModifier = _dbContext.BidLists.FirstOrDefault(b => b.BidListId == bidList.BidListId);
+            if (bidListAModifier is not null)
             {
-                _context.BidLists.Remove(bid);
-
-                await _context.SaveChangesAsync();
+                bidListAModifier.Account = bidList.Account;
+                bidListAModifier.BidType = bidList.BidType;
+                bidListAModifier.BidQuantity = bidList.BidQuantity;
+                bidListAModifier.AskQuantity = bidList.AskQuantity;
+                bidListAModifier.Bid = bidList.Bid;
+                bidListAModifier.Ask = bidList.Ask;
+                bidListAModifier.Benchmark = bidList.Benchmark;
+                bidListAModifier.BidListDate = bidList.BidListDate;
+                bidListAModifier.Commentary = bidList.Commentary;
+                bidListAModifier.BidSecurity = bidList.BidSecurity;
+                bidListAModifier.BidStatus = bidList.BidStatus;
+                bidListAModifier.Trader = bidList.Trader;
+                bidListAModifier.Book = bidList.Book;
+                bidListAModifier.CreationName = bidList.CreationName;
+                bidListAModifier.RevisionName = bidList.RevisionName;
+                bidListAModifier.RevisionDate = bidList.RevisionDate;
+                bidListAModifier.DealName = bidList.DealName;
+                bidListAModifier.DealType = bidList.DealType;
+                bidListAModifier.SourceListId = bidList.SourceListId;
+                bidListAModifier.Side = bidList.Side;
+                _dbContext.SaveChanges();
             }
-        }
-        public bool BidListExists(int id)
-        {
-            return _context.BidLists.Any(e => e.BidListId == id);
+            return bidListAModifier;
         }
     }
 }

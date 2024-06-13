@@ -41,3 +41,45 @@ WHERE [a].[NormalizedName] = @__normalizedName_0
 2024-06-13 08:04:12.011 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.3314ms
 2024-06-13 08:04:12.075 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
 2024-06-13 08:04:12.217 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 141.8931ms
+2024-06-13 08:07:31.757 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-13 08:07:31.939 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-13 08:07:32.193 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-13 08:07:32.198 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-13 08:07:32.204 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-13 08:07:32.205 +02:00 [INF] Hosting environment: Development
+2024-06-13 08:07:32.206 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-13 08:07:32.812 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-13 08:07:33.095 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 292.113ms
+2024-06-13 08:07:33.123 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-13 08:07:33.134 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 11.1671ms
+2024-06-13 08:07:33.151 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-13 08:07:33.229 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.7282ms
+2024-06-13 08:07:33.273 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-13 08:07:33.452 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 178.7673ms
+2024-06-13 09:54:03.725 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-13 09:54:03.904 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-13 09:54:04.047 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-13 09:54:04.048 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-13 09:54:04.050 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-13 09:54:04.051 +02:00 [INF] Hosting environment: Development
+2024-06-13 09:54:04.051 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-13 09:54:04.400 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-13 09:54:04.567 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 171.4871ms
+2024-06-13 09:54:04.602 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-13 09:54:04.602 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-13 09:54:04.620 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 18.5234ms
+2024-06-13 09:54:04.645 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.7743ms
+2024-06-13 09:54:04.679 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-13 09:54:04.759 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 80.5619ms
+2024-06-13 09:54:27.170 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/Home - null null
+2024-06-13 09:54:27.231 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User|Admin)
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-06-13 09:54:27.235 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-13 09:54:27.237 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/Home - 401 0 null 67.1096ms

@@ -6,77 +6,60 @@ namespace P7CreateRestApi.Repositories
 {
     public class TradeRepository : ITradeRepository
     {
-        private LocalDbContext _context;
-
-        public TradeRepository(LocalDbContext context)
+        private readonly LocalDbContext _dbContext;
+        public TradeRepository(LocalDbContext dbcontext)
         {
-            _context = context;
+            _dbContext = dbcontext;
         }
 
-        public async Task<IEnumerable<Trade>> GetAllTrade()
+        public void Create(Trade trade)
         {
-            var trad = await _context.Trades.ToListAsync();
-
-            if (trad == null)
-            {
-                throw new Exception("Trade does not exist.");
-            }
-
-            return trad;
+            _dbContext.Trades.Add(trade);
+            _dbContext.SaveChanges();
         }
 
-        public async Task Add(Trade trade)
+        public Trade? Delete(int id)
         {
-            if (TradeExists(trade.TradeId))
+            var trade = _dbContext.Trades.FirstOrDefault(t => t.TradeId == id);
+            if (trade is not null)
             {
-                throw new Exception("Trade already exists.");
+                _dbContext.Trades.Remove(trade);
+                _dbContext.SaveChanges();
             }
-
-            _context.Trades.Add(trade);
-
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task Update(Trade trade)
-        {
-            if (!TradeExists(trade.TradeId))
-            {
-                throw new Exception("Trade does not exist.");
-            }
-
-            _context.Trades.Update(trade);
-
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task<Trade> GetTradeId(int id)
-        {
-
-            var trade = await _context.Trades.FindAsync(id);
-
-            if (trade == null)
-            {
-                throw new Exception("Trade does not exist.");
-            }
-
             return trade;
         }
 
-        public async Task Delete(int id)
-        {
-            var trade = await _context.Trades.FindAsync(id);
+        public Trade? Get(int id) => _dbContext.Trades.FirstOrDefault(t => t.TradeId == id);
 
-            if (trade != null)
+        public List<Trade> List() => _dbContext.Trades.ToList();
+
+        public Trade? Update(Trade trade)
+        {
+            var tradeAModifier = _dbContext.Trades.FirstOrDefault(t => t.TradeId == trade.TradeId);
+            if (tradeAModifier is not null)
             {
-                _context.Trades.Remove(trade);
-
-                await _context.SaveChangesAsync();
+                tradeAModifier.Account = trade.Account;
+                tradeAModifier.AccountType = trade.AccountType;
+                tradeAModifier.BuyQuantity = trade.BuyQuantity;
+                tradeAModifier.SellQuantity = trade.SellQuantity;
+                tradeAModifier.BuyPrice = trade.BuyPrice;
+                tradeAModifier.SellPrice = trade.SellPrice;
+                tradeAModifier.TradeDate = trade.TradeDate;
+                tradeAModifier.TradeSecurity = trade.TradeSecurity;
+                tradeAModifier.TradeStatus = trade.TradeStatus;
+                tradeAModifier.Trader = trade.Trader;
+                tradeAModifier.Benchmark = trade.Benchmark;
+                tradeAModifier.Book = trade.Book;
+                tradeAModifier.CreationName = trade.CreationName;
+                tradeAModifier.RevisionName = trade.RevisionName;
+                tradeAModifier.RevisionDate = trade.RevisionDate;
+                tradeAModifier.DealName = trade.DealName;
+                tradeAModifier.DealType = trade.DealType;
+                tradeAModifier.SourceListId = trade.SourceListId;
+                tradeAModifier.Side = trade.Side;
+                _dbContext.SaveChanges();
             }
-        }
-
-        public bool TradeExists(int id)
-        {
-            return _context.Trades.Any(t => t.TradeId == id);
+            return tradeAModifier;
         }
     }
 }

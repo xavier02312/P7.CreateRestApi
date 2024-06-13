@@ -1,6 +1,9 @@
 using Dot.Net.WebApi.Domain;
-using Dot.Net.WebApi.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.Models.InputModel;
+using P7CreateRestApi.Services;
+using Serilog;
 
 namespace Dot.Net.WebApi.Controllers
 {
@@ -8,78 +11,134 @@ namespace Dot.Net.WebApi.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private UserRepository _userRepository;
+        // Service de gestion des opérations CRUD
+        private readonly IUserService _userService;
 
-        public UserController(UserRepository userRepository)
+        public UserController(IUserService userRepository)
         {
-            _userRepository = userRepository;
+            _userService = userRepository;
         }
 
         [HttpGet]
         [Route("list")]
-        public IActionResult Home()
+        [Authorize(policy: "Admin")]
+        public async Task<IActionResult> Home()
         {
-            return Ok();
-        }
-
-        [HttpGet]
-        [Route("add")]
-        public IActionResult AddUser([FromBody] User user)
-        {
-            return Ok();
-        }
-
-        [HttpGet]
-        [Route("validate")]
-        public IActionResult Validate([FromBody] User user)
-        {
-            if (!ModelState.IsValid)
+            Log.Information("Récupération de la liste des 'User'");
+            try
             {
-                return BadRequest();
+                return Ok(await _userService.List());
             }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la récupération des listes 'User'");
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+        }
 
-            _userRepository.Add(user);
-
-            return Ok();
+        [HttpPost]
+        [Route("add")]
+        [Authorize(policy: "Admin")]
+        public async Task<IActionResult> AddUser([FromBody] UserInputModel inputModel)
+        {
+            Log.Information("Ajout d'un utilisateur");
+            try
+            {
+                var user = await _userService.Create(inputModel);
+                if (user is not null)
+                {
+                    return Ok(user);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de l'ajout d'un utilisateur");
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return BadRequest();
         }
 
         [HttpGet]
         [Route("update/{id}")]
-        public async Task <IActionResult> ShowUpdateForm(int id)
+        [Authorize(policy: "Admin")]
+        public IActionResult ShowUpdateForm(int id)
         {
-            var user = await _userRepository.FindById(id);
-
-            if (user == null)
-                throw new ArgumentException("Invalid user Id:" + id);
-
-            return Ok();
+            Log.Information("Récupération sur la route 'update/id' de 'User' avec l'id : {id}", id);
+            try
+            {
+                var user = _userService.Get(id);
+                if (user is not null)
+                {
+                    return Ok(user);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la récupération de 'User' avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
         }
 
         [HttpPost]
         [Route("update/{id}")]
-        public IActionResult UpdateUser(int id, [FromBody] User user)
+        [Authorize(policy: "Admin")]
+        public async Task<IActionResult> UpdateUser(int id, [FromBody] UserInputModel inputModel)
         {
-            // TODO: check required fields, if valid call service to update Trade and return Trade list
-            return Ok();
+            Log.Information("Mise à jour de l'utilisateur avec l'id : {id}", id);
+            try
+            {
+                var user = await _userService.Update(id, inputModel);
+                if (user is not null)
+                {
+                    return Ok(await _userService.List());
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la mise à jour de l'utilisateur avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
         }
 
         [HttpDelete]
         [Route("{id}")]
-        public async Task <IActionResult> DeleteUser(int id)
+        [Authorize(policy: "Admin")]
+        public async Task<IActionResult> DeleteUser(int id)
         {
-            var user = await _userRepository.FindById(id);
-
-            if (user == null)
-                throw new ArgumentException("Invalid user Id:" + id);
-
-            return Ok();
+            Log.Information("Suppression de l'utilisateur avec l'id : {id}", id);
+            try
+            {
+                var user = await _userService.Delete(id);
+                if (user is not null)
+                {
+                    return Ok(await _userService.List());
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la suppression de l'utilisateur avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
         }
 
         [HttpGet]
         [Route("/secure/article-details")]
+        [Authorize(policy: "Admin")]
         public async Task<ActionResult<List<User>>> GetAllUserArticles()
         {
-            return Ok();
+            Log.Information("Récupération de la liste des utilisateurs");
+            try
+            {
+                return Ok(await _userService.List());
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la récupération des listes des utilisateurs");
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
         }
     }
 }

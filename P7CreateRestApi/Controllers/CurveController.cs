@@ -1,5 +1,9 @@
 using Dot.Net.WebApi.Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.Models.InputModel;
+using P7CreateRestApi.Services;
+using Serilog;
 
 namespace Dot.Net.WebApi.Controllers
 {
@@ -7,52 +11,135 @@ namespace Dot.Net.WebApi.Controllers
     [Route("[controller]")]
     public class CurveController : ControllerBase
     {
-        // TODO: Inject Curve Point service
+        // Service de gestion des opérations CRUD
+        private readonly ICurvePointService _curvePointService;
+
+        public CurveController(ICurvePointService curvePointService) 
+        {
+            _curvePointService = curvePointService;
+        }
 
         [HttpGet]
         [Route("list")]
+        [Authorize(policy: "User")]
         public IActionResult Home()
         {
-            return Ok();
+            Log.Information("Récupération de la liste des 'Curve'");
+            try
+            {
+                return Ok(_curvePointService.List());
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Une erreur s'est produite lors de la récupération de la liste des 'Curve'");
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
         }
 
         [HttpGet]
+        [Route("get/{id}")]
+        [Authorize(policy: "User")]
+        public IActionResult Get([FromRoute] int id)
+        {
+            Log.Information("Récupération de 'Curve' avec l'id : {id}", id);
+            try
+            {
+                var curvePoint = _curvePointService.Get(id);
+                if (curvePoint is not null)
+                {
+                    return Ok(curvePoint);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la récupération de 'Curve' avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
         [Route("add")]
-        public IActionResult AddCurvePoint([FromBody]CurvePoint curvePoint)
+        [Authorize(policy: "User")]
+        public IActionResult AddCurvePoint([FromBody] CurvePointInputModel inputModel)
         {
-            return Ok();
-        }
-
-        [HttpGet]
-        [Route("validate")]
-        public IActionResult Validate([FromBody]CurvePoint curvePoint)
-        {
-            // TODO: check data valid and save to db, after saving return bid list
-            return Ok();
+            Log.Information("Ajout d'une 'Curve'");
+            try
+            {
+                return Ok(_curvePointService.Create(inputModel));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Une erreur s'est produite lors de l'ajout d'une 'Curve'");
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
         }
 
         [HttpGet]
         [Route("update/{id}")]
+        [Authorize(policy: "User")]
         public IActionResult ShowUpdateForm(int id)
         {
-            // TODO: get CurvePoint by Id and to model then show to the form
-            return Ok();
+            Log.Information("Récupération sur la route 'update/id' de 'Curve' avec l'id : {id}", id);
+            try
+            {
+                var curvePoint = _curvePointService.Get(id);
+                if (curvePoint is not null)
+                {
+                    return Ok(curvePoint);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la récupération de 'Curve' avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
         }
 
         [HttpPost]
         [Route("update/{id}")]
-        public IActionResult UpdateCurvePoint(int id, [FromBody] CurvePoint curvePoint)
+        [Authorize(policy: "User")]
+        public IActionResult UpdateById([FromRoute] int id, [FromBody] CurvePointInputModel inputModel)
         {
-            // TODO: check required fields, if valid call service to update Curve and return Curve list
-            return Ok();
+            Log.Information("Mise à jour de 'Curve' avec l'id : {id}", id);
+            try
+            {
+                var curvePoint = _curvePointService.Update(id, inputModel);
+                if (curvePoint is not null)
+                {
+                    return Ok(_curvePointService.List());
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la mise à jour de 'Curve' avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
+
         }
 
         [HttpDelete]
-        [Route("{id}")]
-        public IActionResult DeleteBid(int id)
+        [Route("delete/{id}")]
+        [Authorize(policy: "User")]
+        public IActionResult DeleteById(int id)
         {
-            // TODO: Find Curve by Id and delete the Curve, return to Curve list
-            return Ok();
+            Log.Information("Suppression de 'Curve' avec l'id : {id}", id);
+            try
+            {
+                var curvePoint = _curvePointService.Delete(id);
+                if (curvePoint is not null)
+                {
+                    return Ok(_curvePointService.List());
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la suppression de 'Curve' avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
         }
     }
 }

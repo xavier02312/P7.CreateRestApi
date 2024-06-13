@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Dot.Net.WebApi.Domain;
-using Dot.Net.WebApi.Controllers.Domain;
-using Dot.Net.WebApi.Controllers;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 

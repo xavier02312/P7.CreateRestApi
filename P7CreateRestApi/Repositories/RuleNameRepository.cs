@@ -1,5 +1,4 @@
 ﻿using Dot.Net.WebApi.Domain;
-using Dot.Net.WebApi.Controllers;
 using Dot.Net.WebApi.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,77 +6,46 @@ namespace P7CreateRestApi.Repositories
 {
     public class RuleNameRepository : IRuleNameRepository
     {
-        private LocalDbContext _context;
-
-        public RuleNameRepository(LocalDbContext context)
-        {  
-            _context = context; 
+        private readonly LocalDbContext _dbContext;
+        public RuleNameRepository(LocalDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+        public void Create(RuleName ruleName)
+        {
+            _dbContext.RuleNames.Add(ruleName);
+            _dbContext.SaveChanges();
         }
 
-        public async Task<IEnumerable<RuleName>> GetAllRuleName()
+        public RuleName? Delete(int id)
         {
-            var rulN = await _context.RuleNames.ToListAsync();
-
-            if (rulN == null)
+            var ruleName = _dbContext.RuleNames.FirstOrDefault(r => r.Id == id);
+            if (ruleName is not null)
             {
-                throw new Exception("RuleName does not exist.");
+                _dbContext.RuleNames.Remove(ruleName);
+                _dbContext.SaveChanges();
             }
-
-            return rulN;
+            return ruleName;
         }
 
-        public async Task Add(RuleName ruleName)
+        public RuleName? Get(int id) => _dbContext.RuleNames.FirstOrDefault(r => r.Id == id);
+
+        public List<RuleName> List() => _dbContext.RuleNames.ToList();
+
+        public RuleName? Update(RuleName ruleName)
         {
-            if (RuleNameExists(ruleName.Id))
+            var ruleNameAModifier = _dbContext.RuleNames.FirstOrDefault(r => r.Id == ruleName.Id);
+            if (ruleNameAModifier is not null)
             {
-                throw new Exception("RuleName already exists.");
+                ruleNameAModifier.Name = ruleName.Name;
+                ruleNameAModifier.Description = ruleName.Description;
+                ruleNameAModifier.Json = ruleName.Json;
+                ruleNameAModifier.Template = ruleName.Template;
+                ruleNameAModifier.SqlStr = ruleName.SqlStr;
+                ruleNameAModifier.SqlPart = ruleName.SqlPart;
+                _dbContext.SaveChanges();
             }
-
-            _context.RuleNames.Add(ruleName);
-
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task Update(RuleName ruleName)
-        {
-            if (!RuleNameExists(ruleName.Id))
-            {
-                throw new Exception("RuleName does not exist.");
-            }
-
-            _context.RuleNames.Update(ruleName);
-
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task<RuleName> GetRuleNameId(int id)
-        {
-
-            var ruleNam = await _context.RuleNames.FindAsync(id);
-
-            if (ruleNam == null)
-            {
-                throw new Exception("RuleName does not exists.");
-            }
-
-            return ruleNam;
-        }
-
-        public async Task Delete(int id)
-        {
-            var ruleName = await _context.RuleNames.FindAsync(id);
-
-            if (ruleName != null)
-            {
-                _context.RuleNames.Remove(ruleName);
-
-                await _context.SaveChangesAsync();
-            }
-        }
-
-        public bool RuleNameExists(int id)
-        {
-            return _context.RuleNames.Any(r => r.Id == id);
+            return ruleNameAModifier;
         }
     }
 }

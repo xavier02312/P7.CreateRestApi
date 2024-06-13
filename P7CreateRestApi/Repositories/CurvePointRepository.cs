@@ -6,77 +6,45 @@ namespace P7CreateRestApi.Repositories
 {
     public class CurvePointRepository : ICurvePointRepository
     {
-        private LocalDbContext _context;
+        private readonly LocalDbContext _dbContext;
 
-        public CurvePointRepository(LocalDbContext context) 
+        public CurvePointRepository(LocalDbContext dbContext)
         {
-            _context = context; 
+            _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<CurvePoint>> GetAllPoint()
-        {
-            var curvPoint = await _context.CurvePoints.ToListAsync();
+        public List<CurvePoint> List() => _dbContext.CurvePoints.ToList();
 
-            if (curvPoint == null)
+        public void Create(CurvePoint curvePoint)
+        {
+            _dbContext.CurvePoints.Add(curvePoint);
+            _dbContext.SaveChanges();
+        }
+
+        public CurvePoint? Get(int id) => _dbContext.CurvePoints.FirstOrDefault(c => c.Id == id);
+
+        public CurvePoint? Update(CurvePoint curvePoint)
+        {
+            var curvePointAModifier = _dbContext.CurvePoints.FirstOrDefault(c => c.Id == curvePoint.Id);
+            if (curvePointAModifier is not null)
             {
-                throw new Exception("BidList does not exist.");
+                curvePointAModifier.CurveId = curvePoint.CurveId;
+                curvePointAModifier.AsOfDate = curvePoint.AsOfDate;
+                curvePointAModifier.CurvePointValue = curvePoint.CurvePointValue;
+                _dbContext.SaveChanges();
             }
-
-            return curvPoint;
+            return curvePointAModifier;
         }
 
-        public async Task Add(CurvePoint curvePoint)
+        public CurvePoint? Delete(int id)
         {
-            if (CurvePointExists(curvePoint.Id))
+            var curvePoint = _dbContext.CurvePoints.FirstOrDefault(c => c.Id == id);
+            if (curvePoint is not null)
             {
-                throw new Exception("CurvePoint already exists.");
+                _dbContext.CurvePoints.Remove(curvePoint);
+                _dbContext.SaveChanges();
             }
-
-            _context.CurvePoints.Add(curvePoint);
-
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task Update(CurvePoint curvePoint)
-        {
-            if (!CurvePointExists(curvePoint.Id))
-            {
-                throw new Exception("CurvePoint does not exist.");
-            }
-
-            _context.CurvePoints.Update(curvePoint);
-
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task<CurvePoint> GetCurvePointId(int id)
-        {
-
-            var curv = await _context.CurvePoints.FindAsync(id);
-
-            if (curv == null)
-            {
-                throw new Exception("CurvePoint does not exists.");
-            }
-
-            return curv;
-        }
-
-        public async Task Delete(int id)
-        {
-            var curveP = await _context.CurvePoints.FindAsync(id);
-
-            if (curveP != null)
-            {
-                _context.CurvePoints.Remove(curveP);
-
-                await _context.SaveChangesAsync();
-            }
-        }
-
-        public bool CurvePointExists(int id)
-        {
-            return _context.CurvePoints.Any(x => x.Id == id);
+            return curvePoint;
         }
     }
 }
