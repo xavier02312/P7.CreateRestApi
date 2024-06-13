@@ -1,0 +1,43 @@
+2024-06-12 16:28:57.373 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-12 16:28:57.538 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-12 16:28:57.724 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-12 16:28:57.725 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-12 16:28:57.728 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-12 16:28:57.729 +02:00 [INF] Hosting environment: Development
+2024-06-12 16:28:57.730 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-12 16:28:58.270 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-12 16:28:58.452 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 190.1915ms
+2024-06-12 16:28:58.481 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-12 16:28:58.481 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-12 16:28:58.499 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 17.5047ms
+2024-06-12 16:28:58.521 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.1138ms
+2024-06-12 16:28:58.554 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-12 16:28:58.627 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 72.7308ms
+2024-06-12 16:29:07.709 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/Home - null null
+2024-06-12 16:29:07.775 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.HomeController.Get (P7CreateRestApi)'
+2024-06-12 16:29:07.784 +02:00 [INF] Route matched with {action = "Get", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Dot.Net.WebApi.Controllers.HomeController (P7CreateRestApi).
+2024-06-12 16:29:07.788 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-06-12 16:29:07.791 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.HomeController.Get (P7CreateRestApi) in 3.6904ms
+2024-06-12 16:29:07.792 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.HomeController.Get (P7CreateRestApi)'
+2024-06-12 16:29:07.793 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/Home - 200 0 null 84.6996ms
+2024-06-13 08:04:10.497 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-13 08:04:10.744 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-13 08:04:11.045 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-13 08:04:11.049 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-13 08:04:11.053 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-13 08:04:11.058 +02:00 [INF] Hosting environment: Development
+2024-06-13 08:04:11.061 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-13 08:04:11.630 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-13 08:04:11.882 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 261.1969ms
+2024-06-13 08:04:11.894 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-13 08:04:11.916 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 21.448ms
+2024-06-13 08:04:11.940 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-13 08:04:12.011 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.3314ms
+2024-06-13 08:04:12.075 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-13 08:04:12.217 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 141.8931ms
