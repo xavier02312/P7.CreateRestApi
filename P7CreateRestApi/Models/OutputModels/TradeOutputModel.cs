@@ -1,6 +1,6 @@
-namespace Dot.Net.WebApi.Domain
+﻿namespace P7CreateRestApi.Models.OutputModel
 {
-    public class Trade
+    public class TradeOutputModel
     {
         public int TradeId { get; set; }
         public string Account { get; set; }

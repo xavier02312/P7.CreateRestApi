@@ -1,83 +1,50 @@
 ﻿using Dot.Net.WebApi.Domain;
 using Dot.Net.WebApi.Data;
-using Dot.Net.WebApi.Controllers.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace P7CreateRestApi.Repositories
 {
     public class RatingRepository : IRatingRepository
     {
-        private LocalDbContext _context;
-
-        public RatingRepository(LocalDbContext context) 
+        private readonly LocalDbContext _dbContext;
+        public RatingRepository(LocalDbContext dbContext)
         {
-            _context = context;
+            _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<Rating>> GetAllRating()
+        public void Create(Rating rating)
         {
-            var rating = await _context.Ratings.ToListAsync();
+            _dbContext.Ratings.Add(rating);
+            _dbContext.SaveChanges();
+        }
 
-            if (rating == null)
+        public Rating? Delete(int id)
+        {
+            var rating = _dbContext.Ratings.FirstOrDefault(r => r.Id == id);
+            if (rating is not null)
             {
-                throw new Exception("Rating does not exist.");
+                _dbContext.Ratings.Remove(rating);
+                _dbContext.SaveChanges();
             }
-
             return rating;
         }
 
-        public async Task Add(Rating rating)
+        public Rating? Get(int id) => _dbContext.Ratings.FirstOrDefault(r => r.Id == id);
+
+        public List<Rating> List() => _dbContext.Ratings.ToList();
+
+        public Rating? Update(Rating rating)
         {
-            if (RatingExists(rating.Id))
+            var ratingAModifier = _dbContext.Ratings.FirstOrDefault(r => r.Id == rating.Id);
+            if (ratingAModifier is not null)
             {
-                throw new Exception("Rating already exists.");
+                ratingAModifier.MoodysRating = rating.MoodysRating;
+                ratingAModifier.SandPRating = rating.SandPRating;
+                ratingAModifier.FitchRating = rating.FitchRating;
+                ratingAModifier.OrderNumber = rating.OrderNumber;
+                _dbContext.SaveChanges();
             }
-
-            _context.Ratings.Add(rating);
-
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task Update(Rating rating)
-        {
-            if (!RatingExists(rating.Id))
-            {
-                throw new Exception("Rating does not exist.");
-            }
-
-            _context.Ratings.Update(rating);
-
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task<Rating> GetRatingId(int id)
-        {
-
-            var rat = await _context.Ratings.FindAsync(id);
-
-            if (rat == null)
-            {
-                throw new Exception("Rating does not exists.");
-            }
-
-            return rat;
-        }
-
-        public async Task Delete(int id)
-        {
-            var rating = await _context.Ratings.FindAsync(id);
-
-            if (rating != null)
-            {
-                _context.Ratings.Remove(rating);
-
-                await _context.SaveChangesAsync();
-            }
-        }
-
-        public bool RatingExists(int id)
-        {
-            return _context.Ratings.Any(r => r.Id == id);
+            return ratingAModifier;
         }
     }
 }

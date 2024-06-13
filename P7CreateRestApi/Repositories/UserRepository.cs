@@ -7,38 +7,26 @@ namespace Dot.Net.WebApi.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private LocalDbContext _context;
+        private readonly LocalDbContext _dbContext;
 
-        public UserRepository(LocalDbContext context)
+        public UserRepository(LocalDbContext dbContext)
         {
-            _context = context;
+            _dbContext = dbContext;
         }
 
         public async Task<List<User>> FindAll()
         {
-            return await _context.Users.ToListAsync();
+            return await _dbContext.Users.ToListAsync();
         }
 
-        public async Task Add(User user)
+        public void Add(User user)
         {
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            _dbContext.Users.Add(user);
+            _dbContext.SaveChanges();
         }
 
-        public async Task<User> FindById(int id)
-        {
-            var user = await _context.Users.FindAsync(id);
+        public User? FindById(int id) => _dbContext.Users.FirstOrDefault(user => user.Id == id);
 
-            if (user == null) 
-            {
-                throw new Exception("User does not exist.");
-            }
-            return user;
-        }
-
-        public async Task<User> FindByUserName(string userName)
-        {
-            return await _context.Users.FirstOrDefaultAsync(user => user.UserName == userName);
-        }
+        public User? FindByUserName(string username) => _dbContext.Users.FirstOrDefault(user => user.UserName == username);
     }
 }

@@ -4,12 +4,9 @@ namespace P7CreateRestApi.Repositories
 {
     public interface IUserRepository
     {
-        Task<List<User>> FindAll();
-
-        Task Add(User user);
-
-        Task<User> FindById(int id);
-
-        Task<User> FindByUserName(string userName);
+        public User? FindByUserName(string username);
+        public Task<List<User>> FindAll();
+        public void Add(User user);
+        public User? FindById(int id);
     }
 }

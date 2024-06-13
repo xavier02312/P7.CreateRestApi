@@ -1,4 +1,8 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.Models.InputModel;
+using P7CreateRestApi.Services;
+using Serilog;
 
 namespace Dot.Net.WebApi.Controllers
 {
@@ -6,53 +10,133 @@ namespace Dot.Net.WebApi.Controllers
     [Route("[controller]")]
     public class RuleNameController : ControllerBase
     {
-        // TODO: Inject RuleName service
+        // Service de gestion des opérations CRUD
+        private readonly IRuleNameService _ruleNameService;
+        public RuleNameController(IRuleNameService ruleNameService)
+        {
+            _ruleNameService = ruleNameService;
+        }
 
         [HttpGet]
         [Route("list")]
+        [Authorize(policy: "User")]
         public IActionResult Home()
         {
-            // TODO: find all RuleName, add to model
-            return Ok();
+            Log.Information("Récupération de la liste des 'RuleName'");
+            try
+            {
+                return Ok(_ruleNameService.List());
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la récupération des listes 'RuleName'");
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
         }
 
         [HttpGet]
+        [Route("get/{id}")]
+        [Authorize(policy: "User")]
+        public IActionResult Get([FromRoute] int id)
+        {
+            Log.Information("Récupération de 'RuleName' avec l'id : {id}", id);
+            try
+            {
+                var ruleName = _ruleNameService.Get(id);
+                if (ruleName is not null)
+                {
+                    return Ok(ruleName);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la récupération de 'RuleName' avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
         [Route("add")]
-        public IActionResult AddRuleName([FromBody]RuleName trade)
+        [Authorize(policy: "User")]
+        public IActionResult AddRuleName([FromBody] RuleNameInputModel inputModel)
         {
-            return Ok();
-        }
-
-        [HttpGet]
-        [Route("validate")]
-        public IActionResult Validate([FromBody]RuleName trade)
-        {
-            // TODO: check data valid and save to db, after saving return RuleName list
-            return Ok();
+            Log.Information("Ajout d'une nouvelle 'RuleName'");
+            try
+            {
+                return Ok(_ruleNameService.Create(inputModel));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de l'ajout d'une nouvelle 'RuleName'");
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
         }
 
         [HttpGet]
         [Route("update/{id}")]
+        [Authorize(policy: "User")]
         public IActionResult ShowUpdateForm(int id)
         {
-            // TODO: get RuleName by Id and to model then show to the form
-            return Ok();
+            Log.Information("Récupération sur la route 'update/id' de 'RuleName' avec l'id : {id}", id);
+            try
+            {
+                var ruleName = _ruleNameService.Get(id);
+                if (ruleName is not null)
+                {
+                    return Ok(ruleName);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la récupération de 'RuleName' avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
         }
 
         [HttpPost]
         [Route("update/{id}")]
-        public IActionResult UpdateRuleName(int id, [FromBody] RuleName rating)
+        [Authorize(policy: "User")]
+        public IActionResult UpdateById([FromRoute] int id, [FromBody] RuleNameInputModel inputModel)
         {
-            // TODO: check required fields, if valid call service to update RuleName and return RuleName list
-            return Ok();
+            Log.Information("Mise à jour de 'RuleName' avec l'id : {id}", id);
+            try
+            {
+                var ruleName = _ruleNameService.Update(id, inputModel);
+                if (ruleName is not null)
+                {
+                    return Ok(_ruleNameService.List());
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la mise à jour de 'RuleName' avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
         }
 
         [HttpDelete]
-        [Route("{id}")]
-        public IActionResult DeleteRuleName(int id)
+        [Route("delete/{id}")]
+        [Authorize(policy: "User")]
+        public IActionResult DeleteRuleName([FromRoute] int id)
         {
-            // TODO: Find RuleName by Id and delete the RuleName, return to Rule list
-            return Ok();
+            Log.Information("Suppression de 'RuleName' avec l'id : {id}", id);
+            try
+            {
+                var ruleName = _ruleNameService.Delete(id);
+                if (ruleName is not null)
+                {
+                    return Ok(_ruleNameService.List());
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erreur lors de la suppression de 'RuleName' avec l'id : {id}", id);
+                return StatusCode(500, "Une erreur interne s'est produite");
+            }
+            return NotFound();
         }
     }
 }

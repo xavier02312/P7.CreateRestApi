@@ -1,17 +1,13 @@
-﻿using Dot.Net.WebApi.Controllers;
+﻿using Dot.Net.WebApi.Domain;
 
 namespace P7CreateRestApi.Repositories
 {
     public interface IRuleNameRepository
     {
-        Task<IEnumerable<RuleName>> GetAllRuleName();
-
-        Task Add(RuleName ruleName);
-
-        Task Update(RuleName ruleName);
-
-        Task<RuleName> GetRuleNameId(int id);
-
-        Task Delete(int id);
+        public List<RuleName> List();
+        public void Create(RuleName ruleName);
+        public RuleName? Get(int id);
+        public RuleName? Update(RuleName ruleName);
+        public RuleName? Delete(int id);
     }
 }

@@ -1,6 +1,6 @@
-namespace Dot.Net.WebApi.Domain
+﻿namespace P7CreateRestApi.Models.OutputModel
 {
-    public class Rating
+    public class RatingOutputModel
     {
         public int Id { get; set; }
         public string MoodysRating { get; set; }
