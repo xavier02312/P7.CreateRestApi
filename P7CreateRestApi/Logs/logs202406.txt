@@ -83,3 +83,27 @@ RolesAuthorizationRequirement:User.IsInRole must be true for one of the followin
 DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2024-06-13 09:54:27.235 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
 2024-06-13 09:54:27.237 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/Home - 401 0 null 67.1096ms
+2024-06-13 10:06:40.387 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-13 10:06:40.517 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-13 10:06:40.655 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-13 10:06:40.727 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-13 10:06:40.730 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-13 10:06:40.730 +02:00 [INF] Hosting environment: Development
+2024-06-13 10:06:40.731 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-13 10:06:41.136 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-13 10:06:41.291 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 161.9306ms
+2024-06-13 10:06:41.296 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-13 10:06:41.313 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 16.8908ms
+2024-06-13 10:06:41.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-13 10:06:41.350 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.6399ms
+2024-06-13 10:06:41.387 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-13 10:06:41.460 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 72.9083ms
+2024-06-13 10:06:49.001 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/BidList/list - null null
+2024-06-13 10:06:49.048 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User|Admin)
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-06-13 10:06:49.052 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-13 10:06:49.053 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/BidList/list - 401 0 null 52.794ms

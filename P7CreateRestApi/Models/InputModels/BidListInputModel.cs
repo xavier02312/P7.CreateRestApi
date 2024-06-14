@@ -27,6 +27,7 @@ namespace P7CreateRestApi.Models.InputModel
         public string Book { get; set; }
         [Required(ErrorMessage = "Le champs CreationName est requis")]
         public string CreationName { get; set; }
+        public DateTime? CreationDate { get; set; }
         [Required(ErrorMessage = "Le champs RevisionName est requis")]
         public string RevisionName { get; set; }
         public DateTime? RevisionDate { get; set; }
