@@ -32,7 +32,7 @@ namespace P7CreateRestApi.Services
                 AsOfDate = inputModel.AsOfDate,
                 Term = inputModel.Term,
                 CurvePointValue = inputModel.CurvePointValue,
-                CreationDate = DateTime.Now
+                CreationDate = inputModel.CreationDate
             };
             _curvePointRepository.Create(curvePoint);
             return ToOutputModel(curvePoint);
@@ -57,7 +57,7 @@ namespace P7CreateRestApi.Services
                 AsOfDate = inputModel.AsOfDate,
                 Term = inputModel.Term,
                 CurvePointValue = inputModel.CurvePointValue,
-                CreationDate = DateTime.Now
+                CreationDate = inputModel.CreationDate
             });
             if(curvePoint is not null) 
             { 
@@ -82,7 +82,9 @@ namespace P7CreateRestApi.Services
                 Id = curvePoint.Id,
                 CurveId = curvePoint.CurveId,
                 AsOfDate = curvePoint.AsOfDate,
-                CurvePointValue = curvePoint.CurvePointValue
+                Term = curvePoint.Term,
+                CurvePointValue = curvePoint.CurvePointValue,
+                CreationDate = curvePoint.CreationDate
             };
     }
 }
