@@ -35,7 +35,7 @@ Update-Database
 
 Exécuter le projet, Automatiquement et uniquement un User "Admin" avec le mot de passe "Sy4oSfGDBWZJ8hcwOG?h$V&" et le rôle "Admin" seras créé.
 
-Notez que le projet est configurer avec un logging dans le Program.cs et qui créer un fichier nommé “logs.txt” dans le répertoire “Logs” donc le niveau de logging minimum et "information" et tous les logs de niveau Information, Warning, Error et Critical sont également enregistrés, et que ce nouveau fichier sera créé chaque mois.
+Notez que le projet est configuré avec un logging dans le Program.cs et qui créer un fichier nommé “logs{année mois}” dans le répertoire “Logs” donc le niveau de logging minimum et "information" et tous les logs de niveau Information, Warning, Error et Critical sont également enregistrés, et que ce nouveau fichier sera créé chaque mois.
 
 
 
