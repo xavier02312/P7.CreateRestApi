@@ -26,9 +26,9 @@ builder.Services.AddSwaggerGen(option =>
     option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
-        Description = "Entrer Bearer suivi de votre token pour avoir l'authorisation",
+        Description = "Copier/coller votre token pour avoir l'autorisation",
         Name = "Authorization",
-        Type = SecuritySchemeType.Http, /* ApiKey */
+        Type = SecuritySchemeType.Http, 
         BearerFormat = "JWT",
         Scheme = "Bearer"
     });
@@ -146,7 +146,7 @@ using (var scope = app.Services.CreateScope())
                 FullName = "Admin",
                 Role = "Admin",
             };
-            var result = await userManager.CreateAsync(user, "Sy4oSfGDBWZJ8hcwOG?h$V&");
+            var result = await userManager.CreateAsync(user, "Sy4oSfGDBWZJ8hcwOG?h$V&"); // Connection
             if (result.Succeeded)
             {
                 await userManager.AddToRoleAsync(user, user.Role);

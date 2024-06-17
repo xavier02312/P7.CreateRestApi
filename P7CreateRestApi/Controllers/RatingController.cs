@@ -20,6 +20,7 @@ namespace Dot.Net.WebApi.Controllers
 
         [HttpGet]
         [Route("list")]
+        [Authorize(policy: "User")]
         public IActionResult Home()
         {
             Log.Information("Récupération de la liste des 'Rating'");
