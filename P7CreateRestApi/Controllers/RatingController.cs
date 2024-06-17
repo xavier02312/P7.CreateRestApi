@@ -96,7 +96,7 @@ namespace Dot.Net.WebApi.Controllers
             return NotFound();
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("update/{id}")]
         [Authorize(policy: "User")]
         public IActionResult UpdateById([FromRoute] int id, [FromBody] RatingInputModel inputModel)

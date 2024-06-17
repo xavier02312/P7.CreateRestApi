@@ -1766,3 +1766,780 @@ FROM [AspNetUsers] AS [a]
 2024-06-17 08:08:08.781 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi) in 52.2404ms
 2024-06-17 08:08:08.785 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
 2024-06-17 08:08:08.789 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/User/list - 200 null application/json; charset=utf-8 142.8881ms
+2024-06-17 10:30:29.064 +02:00 [INF] Executed DbCommand (36ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-17 10:30:29.259 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-17 10:30:29.459 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-17 10:30:29.461 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-17 10:30:29.463 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-17 10:30:29.464 +02:00 [INF] Hosting environment: Development
+2024-06-17 10:30:29.465 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-17 10:30:30.095 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-17 10:30:30.289 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 201.5654ms
+2024-06-17 10:30:30.327 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-17 10:30:30.327 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-17 10:30:30.344 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 16.9545ms
+2024-06-17 10:30:30.375 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.9458ms
+2024-06-17 10:30:30.413 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-17 10:30:30.508 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 95.3281ms
+2024-06-17 10:33:50.856 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/Auth/login - application/json 50
+2024-06-17 10:33:50.934 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 10:33:50.953 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.InputModels.LoginInputModel) on controller P7CreateRestApi.Controllers.AuthController (P7CreateRestApi).
+2024-06-17 10:33:51.006 +02:00 [INF] Tentative de connexion pour l'utilisateur avec le nom d'utilisateur : Xavier
+2024-06-17 10:33:51.077 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 10:33:51.208 +02:00 [WRN] Échec de l'authentification pour l'utilisateur avec le nom d'utilisateur Xavier
+2024-06-17 10:33:51.218 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-06-17 10:33:51.244 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi) in 285.1318ms
+2024-06-17 10:33:51.249 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 10:33:51.253 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/Auth/login - 401 null application/problem+json; charset=utf-8 397.9215ms
+2024-06-17 10:34:13.963 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/Auth/login - application/json 58
+2024-06-17 10:34:13.979 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 10:34:13.982 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.InputModels.LoginInputModel) on controller P7CreateRestApi.Controllers.AuthController (P7CreateRestApi).
+2024-06-17 10:34:13.989 +02:00 [INF] Tentative de connexion pour l'utilisateur avec le nom d'utilisateur : Xavier
+2024-06-17 10:34:14.013 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 10:34:14.087 +02:00 [INF] Utilisateur avec le nom d'utilisateur Xavier authentifié avec succès
+2024-06-17 10:34:14.135 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-17 10:34:14.166 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-17 10:34:14.174 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi) in 188.9524ms
+2024-06-17 10:34:14.177 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 10:34:14.179 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/Auth/login - 200 null application/json; charset=utf-8 216.021ms
+2024-06-17 10:35:16.943 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/BidList/add - application/json 552
+2024-06-17 10:35:16.992 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.BidListController.AddBidList (P7CreateRestApi)'
+2024-06-17 10:35:16.996 +02:00 [INF] Route matched with {action = "AddBidList", controller = "BidList"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddBidList(P7CreateRestApi.Models.InputModel.BidListInputModel) on controller Dot.Net.WebApi.Controllers.BidListController (P7CreateRestApi).
+2024-06-17 10:35:17.021 +02:00 [INF] Ajout d'une 'BidList'
+2024-06-17 10:35:17.164 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Double), @p2='?' (DbType = Double), @p3='?' (Size = 4000), @p4='?' (DbType = Double), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Double), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BidLists] ([Account], [Ask], [AskQuantity], [Benchmark], [Bid], [BidListDate], [BidQuantity], [BidSecurity], [BidStatus], [BidType], [Book], [Commentary], [CreationDate], [CreationName], [DealName], [DealType], [RevisionDate], [RevisionName], [Side], [SourceListId], [Trader])
+OUTPUT INSERTED.[BidListId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20);
+2024-06-17 10:35:17.191 +02:00 [INF] Executing OkObjectResult, writing value of type 'P7CreateRestApi.Models.OutputModel.BidListOutputModel'.
+2024-06-17 10:35:17.202 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.BidListController.AddBidList (P7CreateRestApi) in 204.8199ms
+2024-06-17 10:35:17.207 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.BidListController.AddBidList (P7CreateRestApi)'
+2024-06-17 10:35:17.214 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/BidList/add - 200 null application/json; charset=utf-8 273.4017ms
+2024-06-17 10:35:40.551 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/BidList/list - null null
+2024-06-17 10:35:40.558 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 10:35:40.561 +02:00 [INF] Route matched with {action = "List", controller = "BidList"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List() on controller Dot.Net.WebApi.Controllers.BidListController (P7CreateRestApi).
+2024-06-17 10:35:40.564 +02:00 [INF] Récupération de la liste des 'BidList'
+2024-06-17 10:35:40.573 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2024-06-17 10:35:40.580 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.BidListOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 10:35:40.582 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi) in 18.6461ms
+2024-06-17 10:35:40.583 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 10:35:40.586 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/BidList/list - 200 null application/json; charset=utf-8 35.6937ms
+2024-06-17 10:39:17.210 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/User/update/2 - null null
+2024-06-17 10:39:17.220 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.ShowUpdateForm (P7CreateRestApi)'
+2024-06-17 10:39:17.223 +02:00 [INF] Route matched with {action = "ShowUpdateForm", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ShowUpdateForm(Int32) on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 10:39:17.227 +02:00 [INF] Récupération sur la route 'update/id' de 'User' avec l'id : 2
+2024-06-17 10:39:17.235 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-06-17 10:39:17.240 +02:00 [INF] Executing OkObjectResult, writing value of type 'P7CreateRestApi.Models.OutputModel.UserOutputModel'.
+2024-06-17 10:39:17.242 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.ShowUpdateForm (P7CreateRestApi) in 18.5764ms
+2024-06-17 10:39:17.251 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.ShowUpdateForm (P7CreateRestApi)'
+2024-06-17 10:39:17.253 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/User/update/2 - 200 null application/json; charset=utf-8 43.2402ms
+2024-06-17 10:39:31.725 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/User/list - null null
+2024-06-17 10:39:31.733 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 10:39:31.738 +02:00 [INF] Route matched with {action = "Home", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Home() on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 10:39:31.743 +02:00 [INF] Récupération de la liste des 'User'
+2024-06-17 10:39:31.755 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-06-17 10:39:31.762 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.UserOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 10:39:31.764 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi) in 21.7448ms
+2024-06-17 10:39:31.765 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 10:39:31.767 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/User/list - 200 null application/json; charset=utf-8 42.3588ms
+2024-06-17 10:40:20.017 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/User/add - application/json 101
+2024-06-17 10:40:20.036 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.AddUser (P7CreateRestApi)'
+2024-06-17 10:40:20.042 +02:00 [INF] Route matched with {action = "AddUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddUser(P7CreateRestApi.Models.InputModel.UserInputModel) on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 10:40:20.056 +02:00 [INF] Ajout d'un utilisateur
+2024-06-17 10:40:20.132 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 10:40:20.172 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [Role], [SecurityStamp], [TwoFactorEnabled], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-06-17 10:40:20.194 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-06-17 10:40:20.221 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2024-06-17 10:40:20.228 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-06-17 10:40:20.240 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 10:40:20.276 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p18='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p19='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FullName] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [NormalizedEmail] = @p9, [NormalizedUserName] = @p10, [PasswordHash] = @p11, [PhoneNumber] = @p12, [PhoneNumberConfirmed] = @p13, [Role] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+2024-06-17 10:40:20.285 +02:00 [INF] Executing OkObjectResult, writing value of type 'P7CreateRestApi.Models.OutputModel.UserOutputModel'.
+2024-06-17 10:40:20.287 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.AddUser (P7CreateRestApi) in 241.7338ms
+2024-06-17 10:40:20.289 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.AddUser (P7CreateRestApi)'
+2024-06-17 10:40:20.291 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/User/add - 200 null application/json; charset=utf-8 273.9348ms
+2024-06-17 10:40:35.846 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7210/User/5 - null null
+2024-06-17 10:40:35.851 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.DeleteUser (P7CreateRestApi)'
+2024-06-17 10:40:35.855 +02:00 [INF] Route matched with {action = "DeleteUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUser(Int32) on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 10:40:35.860 +02:00 [INF] Suppression de l'utilisateur avec l'id : 5
+2024-06-17 10:40:35.865 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-06-17 10:40:35.880 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [AspNetUsers]
+OUTPUT 1
+WHERE [Id] = @p0 AND [ConcurrencyStamp] = @p1;
+2024-06-17 10:40:35.886 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-06-17 10:40:35.888 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.UserOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 10:40:35.890 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.DeleteUser (P7CreateRestApi) in 32.0276ms
+2024-06-17 10:40:35.891 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.DeleteUser (P7CreateRestApi)'
+2024-06-17 10:40:35.893 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7210/User/5 - 200 null application/json; charset=utf-8 46.7711ms
+2024-06-17 10:41:33.263 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/User/list - null null
+2024-06-17 10:41:33.273 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 10:41:33.274 +02:00 [INF] Route matched with {action = "Home", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Home() on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 10:41:33.276 +02:00 [INF] Récupération de la liste des 'User'
+2024-06-17 10:41:33.282 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-06-17 10:41:33.290 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.UserOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 10:41:33.293 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi) in 16.8195ms
+2024-06-17 10:41:33.294 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 10:41:33.295 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/User/list - 200 null application/json; charset=utf-8 33.5495ms
+2024-06-17 10:42:05.061 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/Auth/login - application/json 57
+2024-06-17 10:42:05.074 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 10:42:05.075 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.InputModels.LoginInputModel) on controller P7CreateRestApi.Controllers.AuthController (P7CreateRestApi).
+2024-06-17 10:42:05.079 +02:00 [INF] Tentative de connexion pour l'utilisateur avec le nom d'utilisateur : Cindy
+2024-06-17 10:42:05.085 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 10:42:05.139 +02:00 [INF] Utilisateur avec le nom d'utilisateur Cindy authentifié avec succès
+2024-06-17 10:42:05.144 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-17 10:42:05.147 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-17 10:42:05.148 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi) in 70.0737ms
+2024-06-17 10:42:05.150 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 10:42:05.151 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/Auth/login - 200 null application/json; charset=utf-8 90.9563ms
+2024-06-17 10:42:27.788 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/User/list - null null
+2024-06-17 10:42:27.796 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-06-17 10:42:27.800 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2024-06-17 10:42:27.800 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/User/list - 403 0 null 12.5931ms
+2024-06-17 10:54:17.142 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-17 10:54:17.367 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-17 10:54:17.582 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-17 10:54:17.583 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-17 10:54:17.586 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-17 10:54:17.587 +02:00 [INF] Hosting environment: Development
+2024-06-17 10:54:17.589 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-17 10:54:18.412 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-17 10:54:18.645 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 240.7144ms
+2024-06-17 10:54:18.668 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-17 10:54:18.677 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-17 10:54:18.677 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 9.647ms
+2024-06-17 10:54:18.720 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.8031ms
+2024-06-17 10:54:18.758 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-17 10:54:18.862 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 104.6613ms
+2024-06-17 10:54:49.347 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/Auth/login - application/json 58
+2024-06-17 10:54:49.412 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 10:54:49.425 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.InputModels.LoginInputModel) on controller P7CreateRestApi.Controllers.AuthController (P7CreateRestApi).
+2024-06-17 10:54:49.467 +02:00 [INF] Tentative de connexion pour l'utilisateur avec le nom d'utilisateur : Xavier
+2024-06-17 10:54:49.518 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 10:54:49.606 +02:00 [INF] Utilisateur avec le nom d'utilisateur Xavier authentifié avec succès
+2024-06-17 10:54:49.640 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-17 10:54:49.671 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-17 10:54:49.686 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi) in 256.149ms
+2024-06-17 10:54:49.688 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 10:54:49.694 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/Auth/login - 200 null application/json; charset=utf-8 346.3149ms
+2024-06-17 11:49:24.092 +02:00 [INF] Executed DbCommand (69ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-17 11:49:24.381 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-17 11:49:24.599 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-17 11:49:24.601 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-17 11:49:24.603 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-17 11:49:24.604 +02:00 [INF] Hosting environment: Development
+2024-06-17 11:49:24.605 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-17 11:49:25.264 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-17 11:49:25.520 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 265.2131ms
+2024-06-17 11:49:25.538 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-17 11:49:25.552 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 14.3412ms
+2024-06-17 11:49:25.567 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-17 11:49:25.645 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.4106ms
+2024-06-17 11:49:25.693 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-17 11:49:25.806 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 113.7856ms
+2024-06-17 11:55:40.825 +02:00 [INF] Executed DbCommand (65ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-17 11:55:41.121 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-17 11:55:41.300 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-17 11:55:41.302 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-17 11:55:41.305 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-17 11:55:41.306 +02:00 [INF] Hosting environment: Development
+2024-06-17 11:55:41.307 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-17 11:55:42.214 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-17 11:55:42.526 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 320.5084ms
+2024-06-17 11:55:42.594 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-17 11:55:42.611 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 17.1737ms
+2024-06-17 11:55:42.616 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-17 11:55:42.683 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.394ms
+2024-06-17 11:55:42.738 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-17 11:55:42.854 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 116.3066ms
+2024-06-17 13:57:25.928 +02:00 [INF] Executed DbCommand (35ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-17 13:57:26.123 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-17 13:57:26.325 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-17 13:57:26.326 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-17 13:57:26.328 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-17 13:57:26.330 +02:00 [INF] Hosting environment: Development
+2024-06-17 13:57:26.332 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-17 13:57:27.349 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-17 13:57:27.514 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 168.8933ms
+2024-06-17 13:57:27.544 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-17 13:57:27.544 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-17 13:57:27.552 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 8.9513ms
+2024-06-17 13:57:27.584 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.8861ms
+2024-06-17 13:57:27.615 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-17 13:57:27.688 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 73.5164ms
+2024-06-17 14:00:46.743 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/Auth/login - application/json 50
+2024-06-17 14:00:46.802 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 14:00:46.814 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.InputModels.LoginInputModel) on controller P7CreateRestApi.Controllers.AuthController (P7CreateRestApi).
+2024-06-17 14:00:46.850 +02:00 [INF] Tentative de connexion pour l'utilisateur avec le nom d'utilisateur : Xavier
+2024-06-17 14:00:46.898 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 14:00:46.982 +02:00 [WRN] Échec de l'authentification pour l'utilisateur avec le nom d'utilisateur Xavier
+2024-06-17 14:00:46.989 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-06-17 14:00:47.003 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi) in 184.7145ms
+2024-06-17 14:00:47.005 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 14:00:47.010 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/Auth/login - 401 null application/problem+json; charset=utf-8 268.3083ms
+2024-06-17 14:01:49.023 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/Auth/login - application/json 55
+2024-06-17 14:01:49.032 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 14:01:49.033 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.InputModels.LoginInputModel) on controller P7CreateRestApi.Controllers.AuthController (P7CreateRestApi).
+2024-06-17 14:01:49.037 +02:00 [INF] Tentative de connexion pour l'utilisateur avec le nom d'utilisateur : Xav
+2024-06-17 14:01:49.076 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 14:01:49.087 +02:00 [WRN] Échec de l'authentification pour l'utilisateur avec le nom d'utilisateur Xav
+2024-06-17 14:01:49.089 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-06-17 14:01:49.149 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi) in 113.976ms
+2024-06-17 14:01:49.165 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 14:01:49.167 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/Auth/login - 401 null application/problem+json; charset=utf-8 144.5549ms
+2024-06-17 14:02:28.548 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/Auth/login - application/json 58
+2024-06-17 14:02:28.558 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 14:02:28.559 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.InputModels.LoginInputModel) on controller P7CreateRestApi.Controllers.AuthController (P7CreateRestApi).
+2024-06-17 14:02:28.566 +02:00 [INF] Tentative de connexion pour l'utilisateur avec le nom d'utilisateur : Xavier
+2024-06-17 14:02:28.571 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 14:02:28.618 +02:00 [INF] Utilisateur avec le nom d'utilisateur Xavier authentifié avec succès
+2024-06-17 14:02:28.672 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-17 14:02:28.699 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-17 14:02:28.705 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi) in 144.1674ms
+2024-06-17 14:02:28.707 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 14:02:28.708 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/Auth/login - 200 null application/json; charset=utf-8 159.8673ms
+2024-06-17 14:02:58.750 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/BidList/list - null null
+2024-06-17 14:02:58.788 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 14:02:58.791 +02:00 [INF] Route matched with {action = "List", controller = "BidList"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List() on controller Dot.Net.WebApi.Controllers.BidListController (P7CreateRestApi).
+2024-06-17 14:02:58.793 +02:00 [INF] Récupération de la liste des 'BidList'
+2024-06-17 14:02:58.805 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2024-06-17 14:02:58.834 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.BidListOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:02:58.845 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi) in 52.9734ms
+2024-06-17 14:02:58.848 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 14:02:58.849 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/BidList/list - 200 null application/json; charset=utf-8 99.6197ms
+2024-06-17 14:03:27.194 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7210/BidList/delete/3 - null null
+2024-06-17 14:03:27.203 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.BidListController.DeleteById (P7CreateRestApi)'
+2024-06-17 14:03:27.208 +02:00 [INF] Route matched with {action = "DeleteById", controller = "BidList"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteById(Int32) on controller Dot.Net.WebApi.Controllers.BidListController (P7CreateRestApi).
+2024-06-17 14:03:27.211 +02:00 [INF] Suppression de 'BidList' avec l'id : 3
+2024-06-17 14:03:27.219 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+WHERE [b].[BidListId] = @__id_0
+2024-06-17 14:03:27.266 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [BidLists]
+OUTPUT 1
+WHERE [BidListId] = @p0;
+2024-06-17 14:03:27.272 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2024-06-17 14:03:27.274 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.BidListOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:03:27.275 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.BidListController.DeleteById (P7CreateRestApi) in 66.1342ms
+2024-06-17 14:03:27.276 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.BidListController.DeleteById (P7CreateRestApi)'
+2024-06-17 14:03:27.277 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7210/BidList/delete/3 - 200 null application/json; charset=utf-8 83.3602ms
+2024-06-17 14:03:40.558 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/BidList/list - null null
+2024-06-17 14:03:40.565 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 14:03:40.566 +02:00 [INF] Route matched with {action = "List", controller = "BidList"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List() on controller Dot.Net.WebApi.Controllers.BidListController (P7CreateRestApi).
+2024-06-17 14:03:40.570 +02:00 [INF] Récupération de la liste des 'BidList'
+2024-06-17 14:03:40.572 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2024-06-17 14:03:40.574 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.BidListOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:03:40.575 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi) in 5.6772ms
+2024-06-17 14:03:40.576 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 14:03:40.577 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/BidList/list - 200 null application/json; charset=utf-8 19.4486ms
+2024-06-17 14:03:59.836 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/BidList/add - application/json 546
+2024-06-17 14:03:59.843 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.BidListController.AddBidList (P7CreateRestApi)'
+2024-06-17 14:03:59.845 +02:00 [INF] Route matched with {action = "AddBidList", controller = "BidList"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddBidList(P7CreateRestApi.Models.InputModel.BidListInputModel) on controller Dot.Net.WebApi.Controllers.BidListController (P7CreateRestApi).
+2024-06-17 14:03:59.856 +02:00 [INF] Ajout d'une 'BidList'
+2024-06-17 14:03:59.878 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Double), @p2='?' (DbType = Double), @p3='?' (Size = 4000), @p4='?' (DbType = Double), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Double), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BidLists] ([Account], [Ask], [AskQuantity], [Benchmark], [Bid], [BidListDate], [BidQuantity], [BidSecurity], [BidStatus], [BidType], [Book], [Commentary], [CreationDate], [CreationName], [DealName], [DealType], [RevisionDate], [RevisionName], [Side], [SourceListId], [Trader])
+OUTPUT INSERTED.[BidListId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20);
+2024-06-17 14:03:59.889 +02:00 [INF] Executing OkObjectResult, writing value of type 'P7CreateRestApi.Models.OutputModel.BidListOutputModel'.
+2024-06-17 14:03:59.890 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.BidListController.AddBidList (P7CreateRestApi) in 43.1103ms
+2024-06-17 14:03:59.891 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.BidListController.AddBidList (P7CreateRestApi)'
+2024-06-17 14:03:59.892 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/BidList/add - 200 null application/json; charset=utf-8 56.7443ms
+2024-06-17 14:04:12.711 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/BidList/list - null null
+2024-06-17 14:04:12.714 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 14:04:12.715 +02:00 [INF] Route matched with {action = "List", controller = "BidList"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List() on controller Dot.Net.WebApi.Controllers.BidListController (P7CreateRestApi).
+2024-06-17 14:04:12.716 +02:00 [INF] Récupération de la liste des 'BidList'
+2024-06-17 14:04:12.719 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2024-06-17 14:04:12.721 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.BidListOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:04:12.721 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi) in 5.3973ms
+2024-06-17 14:04:12.722 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 14:04:12.723 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/BidList/list - 200 null application/json; charset=utf-8 11.7814ms
+2024-06-17 14:04:44.543 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/User/list - null null
+2024-06-17 14:04:44.547 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 14:04:44.550 +02:00 [INF] Route matched with {action = "Home", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Home() on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 14:04:44.553 +02:00 [INF] Récupération de la liste des 'User'
+2024-06-17 14:04:44.560 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-06-17 14:04:44.563 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.UserOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:04:44.565 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi) in 13.0502ms
+2024-06-17 14:04:44.567 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 14:04:44.568 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/User/list - 200 null application/json; charset=utf-8 24.8366ms
+2024-06-17 14:05:06.035 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/Auth/login - application/json 57
+2024-06-17 14:05:06.038 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 14:05:06.039 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.InputModels.LoginInputModel) on controller P7CreateRestApi.Controllers.AuthController (P7CreateRestApi).
+2024-06-17 14:05:06.041 +02:00 [INF] Tentative de connexion pour l'utilisateur avec le nom d'utilisateur : Cindy
+2024-06-17 14:05:06.045 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 14:05:06.090 +02:00 [INF] Utilisateur avec le nom d'utilisateur Cindy authentifié avec succès
+2024-06-17 14:05:06.095 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-17 14:05:06.097 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-17 14:05:06.099 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi) in 58.0886ms
+2024-06-17 14:05:06.099 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 14:05:06.100 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/Auth/login - 200 null application/json; charset=utf-8 65.302ms
+2024-06-17 14:06:19.457 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/User/list - null null
+2024-06-17 14:06:19.465 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-06-17 14:06:19.467 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2024-06-17 14:06:19.468 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/User/list - 403 0 null 14.4418ms
+2024-06-17 14:18:31.603 +02:00 [INF] Executed DbCommand (44ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-06-17 14:18:31.778 +02:00 [INF] User profile is available. Using 'C:\Users\paque\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-17 14:18:31.964 +02:00 [INF] Now listening on: https://localhost:7210
+2024-06-17 14:18:31.965 +02:00 [INF] Now listening on: http://localhost:5267
+2024-06-17 14:18:31.967 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-17 14:18:31.968 +02:00 [INF] Hosting environment: Development
+2024-06-17 14:18:31.969 +02:00 [INF] Content root path: C:\Users\paque\OneDrive\Bureau\API_REST_Back-end.NET-main\API_REST_Back-end.NET-main\P7CreateRestApi
+2024-06-17 14:18:32.498 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2024-06-17 14:18:32.675 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 179.8721ms
+2024-06-17 14:18:32.682 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-17 14:18:32.691 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 8.7239ms
+2024-06-17 14:18:32.713 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2024-06-17 14:18:32.765 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.3701ms
+2024-06-17 14:18:32.814 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2024-06-17 14:18:32.900 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 85.8967ms
+2024-06-17 14:19:37.122 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/Auth/login - application/json 58
+2024-06-17 14:19:37.186 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 14:19:37.204 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.InputModels.LoginInputModel) on controller P7CreateRestApi.Controllers.AuthController (P7CreateRestApi).
+2024-06-17 14:19:37.246 +02:00 [INF] Tentative de connexion pour l'utilisateur avec le nom d'utilisateur : Xavier
+2024-06-17 14:19:37.319 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 14:19:37.448 +02:00 [INF] Utilisateur avec le nom d'utilisateur Xavier authentifié avec succès
+2024-06-17 14:19:37.492 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-17 14:19:37.525 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-17 14:19:37.540 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi) in 329.9966ms
+2024-06-17 14:19:37.542 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AuthController.Login (P7CreateRestApi)'
+2024-06-17 14:19:37.547 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/Auth/login - 200 null application/json; charset=utf-8 425.8509ms
+2024-06-17 14:20:01.899 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/Trade/list - null null
+2024-06-17 14:20:01.937 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.TradeController.Home (P7CreateRestApi)'
+2024-06-17 14:20:01.940 +02:00 [INF] Route matched with {action = "Home", controller = "Trade"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Home() on controller Dot.Net.WebApi.Controllers.TradeController (P7CreateRestApi).
+2024-06-17 14:20:01.942 +02:00 [INF] Récupération de la liste des 'Trade'
+2024-06-17 14:20:01.969 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TradeId], [t].[Account], [t].[AccountType], [t].[Benchmark], [t].[Book], [t].[BuyPrice], [t].[BuyQuantity], [t].[CreationDate], [t].[CreationName], [t].[DealName], [t].[DealType], [t].[RevisionDate], [t].[RevisionName], [t].[SellPrice], [t].[SellQuantity], [t].[Side], [t].[SourceListId], [t].[TradeDate], [t].[TradeSecurity], [t].[TradeStatus], [t].[Trader]
+FROM [Trades] AS [t]
+2024-06-17 14:20:02.010 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.TradeOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:20:02.030 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.TradeController.Home (P7CreateRestApi) in 88.9938ms
+2024-06-17 14:20:02.032 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.TradeController.Home (P7CreateRestApi)'
+2024-06-17 14:20:02.032 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/Trade/list - 200 null application/json; charset=utf-8 133.9474ms
+2024-06-17 14:20:34.799 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7210/Trade/update/1 - application/json 542
+2024-06-17 14:20:34.809 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.TradeController.UpdateById (P7CreateRestApi)'
+2024-06-17 14:20:34.813 +02:00 [INF] Route matched with {action = "UpdateById", controller = "Trade"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateById(Int32, P7CreateRestApi.Models.InputModel.TradeInputModel) on controller Dot.Net.WebApi.Controllers.TradeController (P7CreateRestApi).
+2024-06-17 14:20:34.826 +02:00 [INF] Mise à jour de 'Trade' avec l'id : 1
+2024-06-17 14:20:34.833 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__trade_TradeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TradeId], [t].[Account], [t].[AccountType], [t].[Benchmark], [t].[Book], [t].[BuyPrice], [t].[BuyQuantity], [t].[CreationDate], [t].[CreationName], [t].[DealName], [t].[DealType], [t].[RevisionDate], [t].[RevisionName], [t].[SellPrice], [t].[SellQuantity], [t].[Side], [t].[SourceListId], [t].[TradeDate], [t].[TradeSecurity], [t].[TradeStatus], [t].[Trader]
+FROM [Trades] AS [t]
+WHERE [t].[TradeId] = @__trade_TradeId_0
+2024-06-17 14:20:34.883 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Trades] SET [Account] = @p0, [RevisionDate] = @p1, [TradeDate] = @p2
+OUTPUT 1
+WHERE [TradeId] = @p3;
+2024-06-17 14:20:34.896 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TradeId], [t].[Account], [t].[AccountType], [t].[Benchmark], [t].[Book], [t].[BuyPrice], [t].[BuyQuantity], [t].[CreationDate], [t].[CreationName], [t].[DealName], [t].[DealType], [t].[RevisionDate], [t].[RevisionName], [t].[SellPrice], [t].[SellQuantity], [t].[Side], [t].[SourceListId], [t].[TradeDate], [t].[TradeSecurity], [t].[TradeStatus], [t].[Trader]
+FROM [Trades] AS [t]
+2024-06-17 14:20:34.900 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.TradeOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:20:34.901 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.TradeController.UpdateById (P7CreateRestApi) in 86.9264ms
+2024-06-17 14:20:34.908 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.TradeController.UpdateById (P7CreateRestApi)'
+2024-06-17 14:20:34.909 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7210/Trade/update/1 - 200 null application/json; charset=utf-8 112.4797ms
+2024-06-17 14:20:53.889 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/User/list - null null
+2024-06-17 14:20:53.895 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 14:20:53.899 +02:00 [INF] Route matched with {action = "Home", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Home() on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 14:20:53.903 +02:00 [INF] Récupération de la liste des 'User'
+2024-06-17 14:20:53.912 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-06-17 14:20:53.916 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.UserOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:20:53.919 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi) in 18.2622ms
+2024-06-17 14:20:53.920 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 14:20:53.927 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/User/list - 200 null application/json; charset=utf-8 37.3367ms
+2024-06-17 14:21:55.204 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7210/User/update/3 - application/json 110
+2024-06-17 14:21:55.213 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.UpdateUser (P7CreateRestApi)'
+2024-06-17 14:21:55.218 +02:00 [INF] Route matched with {action = "UpdateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(Int32, P7CreateRestApi.Models.InputModel.UserInputModel) on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 14:21:55.225 +02:00 [INF] Mise à jour de l'utilisateur avec l'id : 3
+2024-06-17 14:21:55.234 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-06-17 14:21:55.298 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 14:21:55.332 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p16='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FullName] = @p4, [LockoutEnabled] = @p5, [LockoutEnd] = @p6, [NormalizedEmail] = @p7, [NormalizedUserName] = @p8, [PasswordHash] = @p9, [PhoneNumber] = @p10, [PhoneNumberConfirmed] = @p11, [Role] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+2024-06-17 14:21:55.342 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-06-17 14:21:55.344 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.UserOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:21:55.345 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.UpdateUser (P7CreateRestApi) in 124.5328ms
+2024-06-17 14:21:55.349 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.UpdateUser (P7CreateRestApi)'
+2024-06-17 14:21:55.349 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7210/User/update/3 - 200 null application/json; charset=utf-8 146.9027ms
+2024-06-17 14:22:15.069 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/User/list - null null
+2024-06-17 14:22:15.072 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 14:22:15.083 +02:00 [INF] Route matched with {action = "Home", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Home() on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 14:22:15.091 +02:00 [INF] Récupération de la liste des 'User'
+2024-06-17 14:22:15.097 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-06-17 14:22:15.099 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.UserOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:22:15.101 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi) in 15.8165ms
+2024-06-17 14:22:15.102 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 14:22:15.104 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/User/list - 200 null application/json; charset=utf-8 34.5916ms
+2024-06-17 14:22:23.277 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7210/User/update/3 - application/json 109
+2024-06-17 14:22:23.282 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.UpdateUser (P7CreateRestApi)'
+2024-06-17 14:22:23.283 +02:00 [INF] Route matched with {action = "UpdateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(Int32, P7CreateRestApi.Models.InputModel.UserInputModel) on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 14:22:23.286 +02:00 [INF] Mise à jour de l'utilisateur avec l'id : 3
+2024-06-17 14:22:23.290 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-06-17 14:22:23.364 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-17 14:22:23.371 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p16='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FullName] = @p4, [LockoutEnabled] = @p5, [LockoutEnd] = @p6, [NormalizedEmail] = @p7, [NormalizedUserName] = @p8, [PasswordHash] = @p9, [PhoneNumber] = @p10, [PhoneNumberConfirmed] = @p11, [Role] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+2024-06-17 14:22:23.374 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-06-17 14:22:23.376 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.UserOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:22:23.377 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.UpdateUser (P7CreateRestApi) in 91.7583ms
+2024-06-17 14:22:23.378 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.UpdateUser (P7CreateRestApi)'
+2024-06-17 14:22:23.379 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7210/User/update/3 - 200 null application/json; charset=utf-8 102.2962ms
+2024-06-17 14:22:30.621 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/User/list - null null
+2024-06-17 14:22:30.625 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 14:22:30.626 +02:00 [INF] Route matched with {action = "Home", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Home() on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 14:22:30.628 +02:00 [INF] Récupération de la liste des 'User'
+2024-06-17 14:22:30.632 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-06-17 14:22:30.635 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.UserOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:22:30.636 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi) in 7.9828ms
+2024-06-17 14:22:30.637 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.Home (P7CreateRestApi)'
+2024-06-17 14:22:30.639 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/User/list - 200 null application/json; charset=utf-8 17.5712ms
+2024-06-17 14:22:40.628 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/secure/article-details - null null
+2024-06-17 14:22:40.636 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.UserController.GetAllUserArticles (P7CreateRestApi)'
+2024-06-17 14:22:40.640 +02:00 [INF] Route matched with {action = "GetAllUserArticles", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Dot.Net.WebApi.Domain.User]]] GetAllUserArticles() on controller Dot.Net.WebApi.Controllers.UserController (P7CreateRestApi).
+2024-06-17 14:22:40.642 +02:00 [INF] Récupération de la liste des utilisateurs
+2024-06-17 14:22:40.647 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-06-17 14:22:40.649 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.UserOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:22:40.651 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.UserController.GetAllUserArticles (P7CreateRestApi) in 10.12ms
+2024-06-17 14:22:40.652 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.UserController.GetAllUserArticles (P7CreateRestApi)'
+2024-06-17 14:22:40.653 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/secure/article-details - 200 null application/json; charset=utf-8 25.5786ms
+2024-06-17 14:23:09.880 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/RuleName/list - null null
+2024-06-17 14:23:09.889 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.RuleNameController.Home (P7CreateRestApi)'
+2024-06-17 14:23:09.890 +02:00 [INF] Route matched with {action = "Home", controller = "RuleName"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Home() on controller Dot.Net.WebApi.Controllers.RuleNameController (P7CreateRestApi).
+2024-06-17 14:23:09.893 +02:00 [INF] Récupération de la liste des 'RuleName'
+2024-06-17 14:23:09.898 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Description], [r].[Json], [r].[Name], [r].[SqlPart], [r].[SqlStr], [r].[Template]
+FROM [RuleNames] AS [r]
+2024-06-17 14:23:09.908 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.RuleNameOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:23:09.911 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.RuleNameController.Home (P7CreateRestApi) in 18.4741ms
+2024-06-17 14:23:09.917 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.RuleNameController.Home (P7CreateRestApi)'
+2024-06-17 14:23:09.918 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/RuleName/list - 200 null application/json; charset=utf-8 39.1682ms
+2024-06-17 14:23:42.850 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7210/RuleName/update/1 - application/json 138
+2024-06-17 14:23:42.860 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.RuleNameController.UpdateById (P7CreateRestApi)'
+2024-06-17 14:23:42.862 +02:00 [INF] Route matched with {action = "UpdateById", controller = "RuleName"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateById(Int32, P7CreateRestApi.Models.InputModel.RuleNameInputModel) on controller Dot.Net.WebApi.Controllers.RuleNameController (P7CreateRestApi).
+2024-06-17 14:23:42.866 +02:00 [INF] Mise à jour de 'RuleName' avec l'id : 1
+2024-06-17 14:23:42.872 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__ruleName_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Description], [r].[Json], [r].[Name], [r].[SqlPart], [r].[SqlStr], [r].[Template]
+FROM [RuleNames] AS [r]
+WHERE [r].[Id] = @__ruleName_Id_0
+2024-06-17 14:23:42.880 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [RuleNames] SET [Name] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-06-17 14:23:42.883 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Description], [r].[Json], [r].[Name], [r].[SqlPart], [r].[SqlStr], [r].[Template]
+FROM [RuleNames] AS [r]
+2024-06-17 14:23:42.885 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.RuleNameOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:23:42.886 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.RuleNameController.UpdateById (P7CreateRestApi) in 22.662ms
+2024-06-17 14:23:42.893 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.RuleNameController.UpdateById (P7CreateRestApi)'
+2024-06-17 14:23:42.894 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7210/RuleName/update/1 - 200 null application/json; charset=utf-8 44.3153ms
+2024-06-17 14:23:52.567 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/RuleName/list - null null
+2024-06-17 14:23:52.570 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.RuleNameController.Home (P7CreateRestApi)'
+2024-06-17 14:23:52.572 +02:00 [INF] Route matched with {action = "Home", controller = "RuleName"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Home() on controller Dot.Net.WebApi.Controllers.RuleNameController (P7CreateRestApi).
+2024-06-17 14:23:52.575 +02:00 [INF] Récupération de la liste des 'RuleName'
+2024-06-17 14:23:52.577 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Description], [r].[Json], [r].[Name], [r].[SqlPart], [r].[SqlStr], [r].[Template]
+FROM [RuleNames] AS [r]
+2024-06-17 14:23:52.580 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.RuleNameOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:23:52.581 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.RuleNameController.Home (P7CreateRestApi) in 7.465ms
+2024-06-17 14:23:52.582 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.RuleNameController.Home (P7CreateRestApi)'
+2024-06-17 14:23:52.583 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/RuleName/list - 200 null application/json; charset=utf-8 16.6121ms
+2024-06-17 14:24:19.053 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/Rating/list - null null
+2024-06-17 14:24:19.064 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.RatingController.Home (P7CreateRestApi)'
+2024-06-17 14:24:19.066 +02:00 [INF] Route matched with {action = "Home", controller = "Rating"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Home() on controller Dot.Net.WebApi.Controllers.RatingController (P7CreateRestApi).
+2024-06-17 14:24:19.068 +02:00 [INF] Récupération de la liste des 'Rating'
+2024-06-17 14:24:19.074 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[FitchRating], [r].[MoodysRating], [r].[OrderNumber], [r].[SandPRating]
+FROM [Ratings] AS [r]
+2024-06-17 14:24:19.083 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.RatingOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:24:19.088 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.RatingController.Home (P7CreateRestApi) in 20.2815ms
+2024-06-17 14:24:19.089 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.RatingController.Home (P7CreateRestApi)'
+2024-06-17 14:24:19.091 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/Rating/list - 200 null application/json; charset=utf-8 38.1707ms
+2024-06-17 14:24:49.387 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7210/Rating/update/1 - application/json 105
+2024-06-17 14:24:49.397 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.RatingController.UpdateById (P7CreateRestApi)'
+2024-06-17 14:24:49.400 +02:00 [INF] Route matched with {action = "UpdateById", controller = "Rating"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateById(Int32, P7CreateRestApi.Models.InputModel.RatingInputModel) on controller Dot.Net.WebApi.Controllers.RatingController (P7CreateRestApi).
+2024-06-17 14:24:49.407 +02:00 [INF] Mise à jour de 'Rating' avec l'id : 1
+2024-06-17 14:24:49.414 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__rating_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[FitchRating], [r].[MoodysRating], [r].[OrderNumber], [r].[SandPRating]
+FROM [Ratings] AS [r]
+WHERE [r].[Id] = @__rating_Id_0
+2024-06-17 14:24:49.423 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Ratings] SET [MoodysRating] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-06-17 14:24:49.426 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[FitchRating], [r].[MoodysRating], [r].[OrderNumber], [r].[SandPRating]
+FROM [Ratings] AS [r]
+2024-06-17 14:24:49.428 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.RatingOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:24:49.429 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.RatingController.UpdateById (P7CreateRestApi) in 25.8668ms
+2024-06-17 14:24:49.430 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.RatingController.UpdateById (P7CreateRestApi)'
+2024-06-17 14:24:49.431 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7210/Rating/update/1 - 200 null application/json; charset=utf-8 43.9201ms
+2024-06-17 14:25:00.654 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/Rating/list - null null
+2024-06-17 14:25:00.659 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.RatingController.Home (P7CreateRestApi)'
+2024-06-17 14:25:00.659 +02:00 [INF] Route matched with {action = "Home", controller = "Rating"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Home() on controller Dot.Net.WebApi.Controllers.RatingController (P7CreateRestApi).
+2024-06-17 14:25:00.663 +02:00 [INF] Récupération de la liste des 'Rating'
+2024-06-17 14:25:00.664 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[FitchRating], [r].[MoodysRating], [r].[OrderNumber], [r].[SandPRating]
+FROM [Ratings] AS [r]
+2024-06-17 14:25:00.667 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.RatingOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:25:00.669 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.RatingController.Home (P7CreateRestApi) in 7.7002ms
+2024-06-17 14:25:00.670 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.RatingController.Home (P7CreateRestApi)'
+2024-06-17 14:25:00.671 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/Rating/list - 200 null application/json; charset=utf-8 16.8942ms
+2024-06-17 14:25:07.826 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/Home/Admin - null null
+2024-06-17 14:25:07.830 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.HomeController.Admin (P7CreateRestApi)'
+2024-06-17 14:25:07.832 +02:00 [INF] Route matched with {action = "Admin", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Admin() on controller Dot.Net.WebApi.Controllers.HomeController (P7CreateRestApi).
+2024-06-17 14:25:07.836 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-06-17 14:25:07.836 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.HomeController.Admin (P7CreateRestApi) in 3.0964ms
+2024-06-17 14:25:07.837 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.HomeController.Admin (P7CreateRestApi)'
+2024-06-17 14:25:07.838 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/Home/Admin - 200 0 null 12.1415ms
+2024-06-17 14:25:19.684 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/Home - null null
+2024-06-17 14:25:19.690 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.HomeController.Get (P7CreateRestApi)'
+2024-06-17 14:25:19.691 +02:00 [INF] Route matched with {action = "Get", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Dot.Net.WebApi.Controllers.HomeController (P7CreateRestApi).
+2024-06-17 14:25:19.693 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-06-17 14:25:19.693 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.HomeController.Get (P7CreateRestApi) in 0.9684ms
+2024-06-17 14:25:19.694 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.HomeController.Get (P7CreateRestApi)'
+2024-06-17 14:25:19.695 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/Home - 200 0 null 11.8333ms
+2024-06-17 14:25:32.653 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/Curve/list - null null
+2024-06-17 14:25:32.657 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.CurveController.Home (P7CreateRestApi)'
+2024-06-17 14:25:32.659 +02:00 [INF] Route matched with {action = "Home", controller = "Curve"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Home() on controller Dot.Net.WebApi.Controllers.CurveController (P7CreateRestApi).
+2024-06-17 14:25:32.661 +02:00 [INF] Récupération de la liste des 'Curve'
+2024-06-17 14:25:32.666 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AsOfDate], [c].[CreationDate], [c].[CurveId], [c].[CurvePointValue], [c].[Term]
+FROM [CurvePoints] AS [c]
+2024-06-17 14:25:32.676 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.CurvePointOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:25:32.679 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.CurveController.Home (P7CreateRestApi) in 18.8831ms
+2024-06-17 14:25:32.680 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.CurveController.Home (P7CreateRestApi)'
+2024-06-17 14:25:32.682 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/Curve/list - 200 null application/json; charset=utf-8 29.1619ms
+2024-06-17 14:26:12.821 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7210/Curve/update/1 - application/json 145
+2024-06-17 14:26:12.829 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.CurveController.UpdateById (P7CreateRestApi)'
+2024-06-17 14:26:12.831 +02:00 [INF] Route matched with {action = "UpdateById", controller = "Curve"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateById(Int32, P7CreateRestApi.Models.InputModel.CurvePointInputModel) on controller Dot.Net.WebApi.Controllers.CurveController (P7CreateRestApi).
+2024-06-17 14:26:12.835 +02:00 [INF] Mise à jour de 'Curve' avec l'id : 1
+2024-06-17 14:26:12.841 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__curvePoint_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AsOfDate], [c].[CreationDate], [c].[CurveId], [c].[CurvePointValue], [c].[Term]
+FROM [CurvePoints] AS [c]
+WHERE [c].[Id] = @__curvePoint_Id_0
+2024-06-17 14:26:12.849 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [CurvePoints] SET [AsOfDate] = @p0, [CurvePointValue] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2024-06-17 14:26:12.852 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AsOfDate], [c].[CreationDate], [c].[CurveId], [c].[CurvePointValue], [c].[Term]
+FROM [CurvePoints] AS [c]
+2024-06-17 14:26:12.854 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.CurvePointOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:26:12.855 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.CurveController.UpdateById (P7CreateRestApi) in 23.2385ms
+2024-06-17 14:26:12.856 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.CurveController.UpdateById (P7CreateRestApi)'
+2024-06-17 14:26:12.861 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7210/Curve/update/1 - 200 null application/json; charset=utf-8 39.5849ms
+2024-06-17 14:26:30.029 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/Curve/list - null null
+2024-06-17 14:26:30.033 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.CurveController.Home (P7CreateRestApi)'
+2024-06-17 14:26:30.036 +02:00 [INF] Route matched with {action = "Home", controller = "Curve"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Home() on controller Dot.Net.WebApi.Controllers.CurveController (P7CreateRestApi).
+2024-06-17 14:26:30.039 +02:00 [INF] Récupération de la liste des 'Curve'
+2024-06-17 14:26:30.041 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AsOfDate], [c].[CreationDate], [c].[CurveId], [c].[CurvePointValue], [c].[Term]
+FROM [CurvePoints] AS [c]
+2024-06-17 14:26:30.043 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.CurvePointOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:26:30.044 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.CurveController.Home (P7CreateRestApi) in 6.4288ms
+2024-06-17 14:26:30.045 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.CurveController.Home (P7CreateRestApi)'
+2024-06-17 14:26:30.047 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/Curve/list - 200 null application/json; charset=utf-8 18.4328ms
+2024-06-17 14:26:40.239 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/BidList/list - null null
+2024-06-17 14:26:40.243 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 14:26:40.245 +02:00 [INF] Route matched with {action = "List", controller = "BidList"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List() on controller Dot.Net.WebApi.Controllers.BidListController (P7CreateRestApi).
+2024-06-17 14:26:40.247 +02:00 [INF] Récupération de la liste des 'BidList'
+2024-06-17 14:26:40.255 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2024-06-17 14:26:40.278 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.BidListOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:26:40.283 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi) in 36.4661ms
+2024-06-17 14:26:40.285 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 14:26:40.286 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/BidList/list - 200 null application/json; charset=utf-8 47.3785ms
+2024-06-17 14:27:34.283 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7210/BidList/update/4 - application/json 548
+2024-06-17 14:27:34.294 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.BidListController.UpdateById (P7CreateRestApi)'
+2024-06-17 14:27:34.296 +02:00 [INF] Route matched with {action = "UpdateById", controller = "BidList"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateById(Int32, P7CreateRestApi.Models.InputModel.BidListInputModel) on controller Dot.Net.WebApi.Controllers.BidListController (P7CreateRestApi).
+2024-06-17 14:27:34.303 +02:00 [INF] Mise à jour de 'BidList' avec l'id : 4
+2024-06-17 14:27:34.311 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__bidList_BidListId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+WHERE [b].[BidListId] = @__bidList_BidListId_0
+2024-06-17 14:27:34.343 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Double), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Double), @p3='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BidLists] SET [AskQuantity] = @p0, [BidListDate] = @p1, [BidQuantity] = @p2, [RevisionDate] = @p3
+OUTPUT 1
+WHERE [BidListId] = @p4;
+2024-06-17 14:27:34.349 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2024-06-17 14:27:34.350 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.BidListOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:27:34.350 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.BidListController.UpdateById (P7CreateRestApi) in 52.2267ms
+2024-06-17 14:27:34.355 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.BidListController.UpdateById (P7CreateRestApi)'
+2024-06-17 14:27:34.356 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7210/BidList/update/4 - 200 null application/json; charset=utf-8 73.222ms
+2024-06-17 14:28:05.021 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/BidList/list - null null
+2024-06-17 14:28:05.028 +02:00 [INF] Executing endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 14:28:05.029 +02:00 [INF] Route matched with {action = "List", controller = "BidList"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List() on controller Dot.Net.WebApi.Controllers.BidListController (P7CreateRestApi).
+2024-06-17 14:28:05.032 +02:00 [INF] Récupération de la liste des 'BidList'
+2024-06-17 14:28:05.036 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2024-06-17 14:28:05.038 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Models.OutputModel.BidListOutputModel, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-17 14:28:05.040 +02:00 [INF] Executed action Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi) in 9.9318ms
+2024-06-17 14:28:05.043 +02:00 [INF] Executed endpoint 'Dot.Net.WebApi.Controllers.BidListController.List (P7CreateRestApi)'
+2024-06-17 14:28:05.048 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/BidList/list - 200 null application/json; charset=utf-8 26.4469ms

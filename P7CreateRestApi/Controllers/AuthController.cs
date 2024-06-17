@@ -73,7 +73,7 @@ namespace P7CreateRestApi.Controllers
             var token = new JwtSecurityToken(
             issuer: _configuration["JWT:ValidIssuer"],
             audience: _configuration["JWT:ValidAudience"],
-            expires: DateTime.Now.AddHours(1),  // valide Tocken 1h00
+            expires: DateTime.Now.AddHours(1),  // valide Token 1h00
             claims: authClaims,
             signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
             );

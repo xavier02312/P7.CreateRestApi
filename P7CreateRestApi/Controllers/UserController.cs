@@ -80,7 +80,7 @@ namespace Dot.Net.WebApi.Controllers
             return NotFound();
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("update/{id}")]
         [Authorize(policy: "Admin")]
         public async Task<IActionResult> UpdateUser(int id, [FromBody] UserInputModel inputModel)
